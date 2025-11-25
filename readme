@@ -1,0 +1,26 @@
+# 1. Login
+ssh fd-<your-number>@hpc.informatik.hs-fulda.de
+ssh fd0002065@hpc.informatik.hs-fulda.de
+
+# 2. Clone repo
+git clone https://github.com/<username>/<repo>.git
+cd <repo>
+
+# 3. Compile
+gcc -fopenmp -O3 -Wall -o matmul matmul.c
+
+# 4. Create output dir
+mkdir -p ~/out
+
+# 5. Edit submission script
+nano slurmSubmit.sh
+
+# 6. Submit job
+sbatch slurmSubmit.sh
+
+# 7. Check status
+squeue -u fd-<your-number>
+
+# 8. View output
+cd ~/out
+cat matmul_<jobid>.out

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <omp.h>
 
-// Define matrix size - can be changed for different tests
-#define N 1000
+#define N 3000
 
 int main() {
     int i, j, k;
